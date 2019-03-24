@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1032334793575",
+    "firebase_url": "https://app-ventas-ff89a.firebaseio.com",
+    "project_id": "app-ventas-ff89a",
+    "storage_bucket": "app-ventas-ff89a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032334793575:android:e72438f048c1f75e",
+        "android_client_info": {
+          "package_name": "com.inc.soft.devers.ventasonlineapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032334793575-74dnqfi2j0g470vjuuqmu3e87m14tlkj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inc.soft.devers.ventasonlineapp",
+            "certificate_hash": "e755c55d25988efe8eedc8a413bb01519b203790"
+          }
+        },
+        {
+          "client_id": "1032334793575-2vou5m8p7np2p4oj1qspalaann3b5d95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkfW6rvq6NwEUs8huNFt6DOKclxYDi5JI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032334793575-2vou5m8p7np2p4oj1qspalaann3b5d95.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
