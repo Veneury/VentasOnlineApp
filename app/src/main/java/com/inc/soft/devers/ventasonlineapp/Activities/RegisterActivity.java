@@ -65,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
                 final String password2=userPassword2.getText().toString();
                 final String name=userName.getText().toString();
 
-                if(email.isEmpty()|| name.isEmpty() || password.isEmpty()|| !password.equals(password2) || pickedImgUri!=null)
+                if(email.isEmpty()|| name.isEmpty() || password.isEmpty()|| !password.equals(password2) || imgUserPhoto!=null)
                 {
                     showMessage("Por favor todos los datos tienen que estar llenos y las contraseñas iguales");
                     regBtn.setVisibility(View.VISIBLE);
