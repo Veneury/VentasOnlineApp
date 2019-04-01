@@ -4,11 +4,18 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.inc.soft.devers.ventasonlineapp.Adapters.PostAdapter;
+import com.inc.soft.devers.ventasonlineapp.Models.Post;
 import com.inc.soft.devers.ventasonlineapp.R;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +36,12 @@ public class FavoritesFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    RecyclerView postRecyclerView ;
+    PostAdapter postAdapter ;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference ;
+    List<Post> postList;
 
     public FavoritesFragment() {
         // Required empty public constructor
