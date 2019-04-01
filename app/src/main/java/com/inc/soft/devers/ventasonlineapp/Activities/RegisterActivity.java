@@ -26,7 +26,6 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.inc.soft.devers.ventasonlineapp.Manifest;
 import com.inc.soft.devers.ventasonlineapp.R;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -65,7 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
                 final String password2=userPassword2.getText().toString();
                 final String name=userName.getText().toString();
 
-                if(email.isEmpty()|| name.isEmpty() || password.isEmpty()|| !password.equals(password2) || imgUserPhoto!=null)
+                if(email.isEmpty()|| name.isEmpty() || password.isEmpty()|| !password.equals(password2) || imgUserPhoto==null)
                 {
                     showMessage("Por favor todos los datos tienen que estar llenos y las contraseñas iguales");
                     regBtn.setVisibility(View.VISIBLE);
