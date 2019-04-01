@@ -96,10 +96,10 @@ public class HomeFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
                 postList = new ArrayList<>();
                 for (DataSnapshot postsnap: dataSnapshot.getChildren()) {
 
@@ -113,7 +113,6 @@ public class HomeFragment extends Fragment {
                 postAdapter = new PostAdapter(getActivity(),postList);
                 postRecyclerView.setAdapter(postAdapter);
 
-
             }
 
             @Override
@@ -121,6 +120,7 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

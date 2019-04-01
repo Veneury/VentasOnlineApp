@@ -22,7 +22,8 @@ public class Post {
         this.timeStamp = ServerValue.TIMESTAMP;
     }
 
-
+    public Post() {
+    }
 
     public String getPostKey() {
         return PostKey;

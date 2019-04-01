@@ -41,6 +41,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         holder.tvTitle.setText(mData.get(position).getTitle());
+        holder.tvPrice.setText(mData.get(position).getPrice());
         Glide.with(mContext).load(mData.get(position).getPicture()).into(holder.imgPost);
         Glide.with(mContext).load(mData.get(position).getUserPhoto()).into(holder.imgPostProfile);
 
@@ -53,7 +54,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvTitle;
+        TextView tvTitle,tvPrice;
         ImageView imgPost;
         ImageView imgPostProfile;
 
@@ -61,6 +62,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             super(itemView);
 
             tvTitle = itemView.findViewById(R.id.row_post_title);
+            tvPrice = itemView.findViewById(R.id.row_post_price);
             imgPost = itemView.findViewById(R.id.row_post_img);
             imgPostProfile = itemView.findViewById(R.id.row_post_profile_img);
 
