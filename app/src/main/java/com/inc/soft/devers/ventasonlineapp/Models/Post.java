@@ -88,4 +88,5 @@ public class Post {
     public void setTimeStamp(Object timeStamp) {
         this.timeStamp = timeStamp;
     }
+
 }

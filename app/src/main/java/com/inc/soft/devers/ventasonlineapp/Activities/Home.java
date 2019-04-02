@@ -3,11 +3,13 @@ package com.inc.soft.devers.ventasonlineapp.Activities;
 import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -27,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -42,6 +45,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 
+import com.inc.soft.devers.ventasonlineapp.Adapters.PostAdapter;
 import com.inc.soft.devers.ventasonlineapp.Fragments.CategorysFragment;
 import com.inc.soft.devers.ventasonlineapp.Fragments.ChatsFragment;
 import com.inc.soft.devers.ventasonlineapp.Fragments.FavoritesFragment;
@@ -59,6 +63,7 @@ public class Home extends AppCompatActivity
     ImageView popupUserImage, popupPostImage, popupAddBtn;
     TextView popupTitle, popupPrice, popupDescription;
     ProgressBar popupClickProgress;
+    ToggleButton buttonFavorite;
     private Uri pickedImgUri = null;
     static final int PReqCode = 2;
     static final int REQUESCODE = 2;
@@ -67,7 +72,7 @@ public class Home extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home2);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         mAuth = FirebaseAuth.getInstance();
@@ -76,7 +81,7 @@ public class Home extends AppCompatActivity
         iniPopup();
         setupPopupImageClick();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,13 +89,13 @@ public class Home extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         updateNavHeader();
@@ -319,7 +324,7 @@ public class Home extends AppCompatActivity
         popupTitle.setText("");
         popupPrice.setText("");
         popupDescription.setText("");
-        popupPostImage.setImageResource(R.drawable.kakashi);
+        popupPostImage.setImageResource(R.drawable.circle_border);
     }
 
     private void showMessage(String message) {
@@ -329,7 +334,7 @@ public class Home extends AppCompatActivity
     }
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -366,7 +371,7 @@ public class Home extends AppCompatActivity
         if (id == R.id.nav_home) {
             // Handle the camera action
 
-            getSupportActionBar().setTitle("Home");
+            getSupportActionBar().setTitle("Inicio");
             getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
         } else if (id == R.id.nav_categories) {
             getSupportActionBar().setTitle("Categorías");
@@ -381,7 +386,7 @@ public class Home extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.container,new ProfileFragment()).commit();
 
         } else if (id == R.id.nav_chat) {
-            getSupportActionBar().setTitle("Mensages");
+            getSupportActionBar().setTitle("Mensajes");
           getSupportFragmentManager().beginTransaction().replace(R.id.container,new ChatsFragment()).commit();
 
         }else if(id == R.id.nav_logout){
@@ -391,18 +396,18 @@ public class Home extends AppCompatActivity
             finish();
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
     public  void updateNavHeader()
     {
-        NavigationView navigationView = (NavigationView)findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         View headerView=navigationView.getHeaderView(0);
-        TextView navUsername = (TextView)headerView.findViewById(R.id.nav_user_name);
-        TextView navUserMail = (TextView)headerView.findViewById(R.id.nav_user_mail);
-        ImageView navUserphoto = (ImageView)headerView.findViewById(R.id.nav_user_photo);
+        TextView navUsername = headerView.findViewById(R.id.nav_user_name);
+        TextView navUserMail = headerView.findViewById(R.id.nav_user_mail);
+        ImageView navUserphoto = headerView.findViewById(R.id.nav_user_photo);
 
         navUserMail.setText(currentUser.getEmail());
         navUsername.setText(currentUser.getDisplayName());
