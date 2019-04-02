@@ -97,5 +97,5 @@
         app:layout_constraintEnd_toEndOf="@+id/popup_add"
         app:layout_constraintStart_toStartOf="@+id/popup_add"
         app:layout_constraintTop_toTopOf="@+id/popup_add" />
-    
+
 </android.support.constraint.ConstraintLayout>
