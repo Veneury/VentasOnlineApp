@@ -1,8 +1,10 @@
 package com.inc.soft.devers.ventasonlineapp.Fragments;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ToggleButton;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -48,6 +51,7 @@ public class HomeFragment extends Fragment {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference ;
     List<Post> postList;
+    ToggleButton buttonFavorite;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -78,6 +82,7 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -90,6 +95,7 @@ public class HomeFragment extends Fragment {
         postRecyclerView.setHasFixedSize(true);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Articulos_publicados");
+
         return fragmentView ;
     }
 
@@ -106,14 +112,16 @@ public class HomeFragment extends Fragment {
                     Post post = postsnap.getValue(Post.class);
                     postList.add(post) ;
 
-
-
                 }
 
                 postAdapter = new PostAdapter(getActivity(),postList);
                 postRecyclerView.setAdapter(postAdapter);
 
             }
+
+
+
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

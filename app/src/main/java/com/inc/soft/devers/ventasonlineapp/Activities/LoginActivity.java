@@ -30,13 +30,13 @@ private Intent HomeActivity;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        userEmail =(EditText)findViewById(R.id.login_user);
-        userPassword=(EditText)findViewById(R.id.login_password);
+        userEmail = findViewById(R.id.login_user);
+        userPassword= findViewById(R.id.login_password);
 
-        btnlogin=(Button)findViewById(R.id.login_btn);
+        btnlogin= findViewById(R.id.login_btn);
 
-        loginProgress=(ProgressBar)findViewById(R.id.login_progress);
-        loginPhoto=(ImageView)findViewById(R.id.login_photo);
+        loginProgress= findViewById(R.id.login_progress);
+        loginPhoto= findViewById(R.id.login_photo);
         mAuth=FirebaseAuth.getInstance();
         loginPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +71,12 @@ private Intent HomeActivity;
                     signIn(mail,password);
                     loginProgress.setVisibility(View.VISIBLE);
                     btnlogin.setVisibility(View.INVISIBLE);
+                    btnlogin.postDelayed(new Runnable() {
+                        public void run() {
+                            btnlogin.setVisibility(View.VISIBLE);
+                            loginProgress.setVisibility(View.INVISIBLE);
+                        }
+                    }, 5000);
                 }
             }
         });

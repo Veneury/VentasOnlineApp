@@ -46,13 +46,13 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         //
-        imgUserPhoto = (ImageView)findViewById(R.id.reg_UserPhoto);
-        userEmail =(EditText)findViewById(R.id.regMail);
-        userPassword =(EditText)findViewById(R.id.regPassword);
-        userPassword2 =(EditText)findViewById(R.id.regPassword2);
-        userName =(EditText)findViewById(R.id.regName);
-        regBtn =(Button)findViewById(R.id.regBtn);
-        loadingProgram =(ProgressBar)findViewById(R.id.reg_ProgressBar);
+        imgUserPhoto = findViewById(R.id.reg_UserPhoto);
+        userEmail = findViewById(R.id.regMail);
+        userPassword = findViewById(R.id.regPassword);
+        userPassword2 = findViewById(R.id.regPassword2);
+        userName = findViewById(R.id.regName);
+        regBtn = findViewById(R.id.regBtn);
+        loadingProgram = findViewById(R.id.reg_ProgressBar);
 
         mAuth =FirebaseAuth.getInstance();
         regBtn.setOnClickListener(new View.OnClickListener() {
