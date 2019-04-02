@@ -44,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        this.setTitle("Registro");
 
         //
         imgUserPhoto = findViewById(R.id.reg_UserPhoto);

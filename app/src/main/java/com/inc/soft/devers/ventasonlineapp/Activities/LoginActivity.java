@@ -29,7 +29,7 @@ private Intent HomeActivity;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        this.setTitle("Login");
         userEmail = findViewById(R.id.login_user);
         userPassword= findViewById(R.id.login_password);
 

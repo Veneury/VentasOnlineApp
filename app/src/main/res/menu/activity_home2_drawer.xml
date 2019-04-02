@@ -8,14 +8,7 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/home_icon_silhouette"
             android:title="Inicio" />
-        <item
-            android:id="@+id/nav_categories"
-            android:icon="@drawable/list"
-            android:title="Categorías" />
-        <item
-            android:id="@+id/nav_favorites"
-            android:icon="@drawable/like"
-            android:title="Favoritos" />
+
 
         <item
             android:id="@+id/nav_chat"

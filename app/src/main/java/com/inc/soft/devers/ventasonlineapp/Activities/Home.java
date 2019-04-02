@@ -373,13 +373,7 @@ public class Home extends AppCompatActivity
 
             getSupportActionBar().setTitle("Inicio");
             getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
-        } else if (id == R.id.nav_categories) {
-            getSupportActionBar().setTitle("Categorías");
-            getSupportFragmentManager().beginTransaction().replace(R.id.container,new CategorysFragment()).commit();
 
-        } else if (id == R.id.nav_favorites) {
-            getSupportActionBar().setTitle("Favoritos");
-            getSupportFragmentManager().beginTransaction().replace(R.id.container,new FavoritesFragment()).commit();
 
         } else if (id == R.id.nav_profile) {
             getSupportActionBar().setTitle("Perfil");
