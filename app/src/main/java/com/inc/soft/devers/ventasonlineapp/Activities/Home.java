@@ -324,7 +324,7 @@ public class Home extends AppCompatActivity
         popupTitle.setText("");
         popupPrice.setText("");
         popupDescription.setText("");
-        popupPostImage.setImageResource(R.drawable.circle_border);
+        popupPostImage.setImageResource(R.drawable.ic_launcher_background);
     }
 
     private void showMessage(String message) {
