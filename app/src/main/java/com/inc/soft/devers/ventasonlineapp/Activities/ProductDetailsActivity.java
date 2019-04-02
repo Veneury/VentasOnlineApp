@@ -21,7 +21,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         productName = findViewById(R.id.product_name);
         productPrice = findViewById(R.id.product_price);
         productDescription = findViewById(R.id.product_description);
-        productPicture = findViewById(R.id.product_picture);
+        productPicture = findViewById(R.id.product_picture);    
         Intent i = getIntent();
 
         productName.setText(i.getStringExtra("name"));
