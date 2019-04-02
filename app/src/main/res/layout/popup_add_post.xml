@@ -36,10 +36,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/popup_title" />
+
+
 
     <EditText
         android:hint="Descripción"
@@ -95,4 +97,5 @@
         app:layout_constraintEnd_toEndOf="@+id/popup_add"
         app:layout_constraintStart_toStartOf="@+id/popup_add"
         app:layout_constraintTop_toTopOf="@+id/popup_add" />
+    
 </android.support.constraint.ConstraintLayout>
